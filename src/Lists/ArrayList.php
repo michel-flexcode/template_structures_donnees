@@ -18,23 +18,71 @@ class ArrayList implements ListInterface
         return json_encode($this->elements, JSON_PRETTY_PRINT);
     }
 
-    public function push(mixed $element = null): void {}
+    public function push(mixed $element = null): void
+    {
+        // alternative array_push($this->elements, $element);
 
-    public function get(int $index): mixed {}
+        $this->elements[] = $element;
+    }
 
-    public function set(int $index, mixed $element): void {}
+    public function get(int $index): mixed
+    {
+        return $this->elements[$index];
+    }
 
-    public function clear(): void {}
+    public function set(int $index, mixed $element): void
+    {
+        $this->elements[$index] = $element;
+    }
 
-    public function includes(mixed $element): bool {}
+    public function clear(): void
+    {
+        $this->elements = [];
+    }
 
-    public function isEmpty(): bool {}
+    public function includes(mixed $element): bool
+    {
+        foreach ($this->elements as $value) {
+            if ($value === $element) {
+                return true;
+            }
+        }
 
-    public function indexOf(mixed $element): int {}
+        return false;
+    }
 
-    public function remove(int $index): void {}
+    public function isEmpty(): bool
+    {
+        if (count($this->elements) > 1) {
+            return true;
+        } else {
+            return false;
+        };
+    }
 
-    public function size(): int {}
+    public function indexOf(mixed $element): int
+    {
+        //     foreach ($this->elements as $value) {
+        //         if ($value === $element) {
+        //             return $index;
+        //         }
+        //     }
 
-    public function toArray(): array {}
+        //     return false;
+        // }
+    }
+
+    public function remove(int $index): void
+    {
+        unset($this->elements[$index]);
+    }
+
+    public function size(): int
+    {
+        return count($this->elements);
+    }
+
+    public function toArray(): array
+    {
+    }
 }

@@ -1,0 +1,5 @@
+Vérification bug 255
+
+php index.php
+
+vendor\bin\pest.bat --filter=ArrayList

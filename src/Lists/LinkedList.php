@@ -22,23 +22,53 @@ class LinkedList implements ListInterface
         return json_encode($this->toArray(), JSON_PRETTY_PRINT);
     }
 
-    public function push(mixed $element): void {}
+    public function push(mixed $element): void
+    {
+        // Check if $this->elements exists and is an array; if not, initialize it as an empty array
+        if (!isset($this->elements) || !is_array($this->elements)) {
+            $this->elements = [];
+        }
 
-    public function get(int $index): mixed {}
+        // Now you can safely push the element onto the array
+        $this->elements[] = $element;
+    }
 
-    public function set(int $index, mixed $element): void {}
+    public function get(int $index): mixed
+    {
+        if ($this->head === null) {
+            $this->head = $next;
+        }
+    }
 
-    public function clear(): void {}
+    public function set(int $index, mixed $element): void
+    {
+    }
 
-    public function includes(mixed $element): bool {}
+    public function clear(): void
+    {
+    }
 
-    public function isEmpty(): bool {}
+    public function includes(mixed $element): bool
+    {
+    }
 
-    public function indexOf(mixed $element): int {}
+    public function isEmpty(): bool
+    {
+    }
 
-    public function remove(int $index): void {}
+    public function indexOf(mixed $element): int
+    {
+    }
 
-    public function size(): int {}
+    public function remove(int $index): void
+    {
+    }
 
-    public function toArray(): array {}
+    public function size(): int
+    {
+    }
+
+    public function toArray(): array
+    {
+    }
 }
